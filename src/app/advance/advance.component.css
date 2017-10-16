@@ -1,0 +1,17 @@
+#mark {
+    display: inline;
+    margin: 0;
+    padding: 0;   
+    color: yellow;    
+    font-weight: 600;
+}
+.rap{
+    word-wrap: join;
+}
+body{
+    margin:10px;
+}
+.format{
+    border: 1px solid black;
+    padding: 10px;
+}

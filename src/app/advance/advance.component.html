@@ -1,0 +1,45 @@
+      
+      <body>
+            
+      <input type="text" [(ngModel)]="searchText" 
+      class="form-control" placeholder="Search By Category" />
+
+      <div class="container-fluid">
+        <h1>Json Data</h1>
+        <div class="row" *ngFor="let posts of post | search: searchText | groupDemo:'userId'">
+          <div class="col-xs-12 col-sm-12 col-lg-12" style="text-align:center;">
+            <h3><u>UserId:-</u> {{ posts.key }}</h3>
+          </div>
+
+          <div class="format">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-lg-12">
+                <h4><u> Id:-</u></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-lg-12" *ngFor="let child of posts.value"> {{ child.id }}</div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-lg-12">
+                <h4><u >Title</u></h4>
+              </div>
+            </div>
+            <div class="row rap">
+              <div class="col-xs-12" *ngFor="let child of posts.value">{{ child.title }}</div>
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-lg-12">
+                <h4><u>Body</u></h4>
+              </div>
+            </div>
+            <div class="row" [hidden] = "userid">
+              <div class="col-xs-12" *ngFor="let child of posts.value">{{ child.body }}</div>
+
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      </body>
