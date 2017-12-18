@@ -1,7 +1,5 @@
-import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import {FormGroup, FormControl, Validators, FormBuilder, FormsModule} from '@angular/forms';
 
 
 @Component({
@@ -11,16 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./sub-basic-component.component.css']
 })
 export class SubBasicComponentComponent {
+    form: FormGroup;
+
    ind: any;
    post: any = [];
    data: any = [];
 
-  form = new FormGroup({
-    id: new FormControl(),
-    name: new FormControl(),
-    email: new FormControl()
-  });
-
+  constructor (private fb: FormBuilder) {
+    this.form = fb.group({
+      id: new FormControl(),
+      name: new FormControl(),
+      email: new FormControl()
+    });
+  }
   get userId(){
     return this.form.get('id').value;
   }
@@ -31,10 +32,7 @@ export class SubBasicComponentComponent {
     return this.form.get('email').value;
   }
 
-  constructor(private router: Router) {
-  }
-
-    clicked() {
+   clicked() {
 
     this.post.push({'id': this.userId, 'name': this.userName, 'email': this.userEmail});
     console.log(this.userId);

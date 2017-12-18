@@ -1,54 +1,56 @@
 <body>
-  <form [formGroup] = "form" (ngSubmit)="clicked()">
-<div class="form-group">
-  <label for="email">Id:</label>
-  <input type="number"
-    class="form-control"  
-    formControlName="id"
-    placeholder="Enter Id" 
-    name="id">
+<form [formGroup]="form" (ngSubmit)='clicked()'>
+  <div class="form-group">
+    <label for="Id">Id:</label>
+    <input type="number"
+           class="form-control"
+           formControlName="id"
+           placeholder="Enter Id"
+           name="id">
 
   </div>
-<div class="form-group">
-  
-  <label for="name">Name:</label>
-  <input type="text" 
-    class="form-control"
-    formControlName="name"
-    placeholder="Enter Name" 
-    name="name">
+  <div class="form-group">
 
-</div>
-<div class="form-group">
-  
-  <label for="email">Email:</label>
-  <input type="text" 
-    class="form-control" 
-    formControlName="email"
-    placeholder="Enter Email" 
-    name="email">
+    <label for="name">Name:</label>
+    <input type="text"
+           class="form-control"
+           formControlName="name"
+           placeholder="Enter Name"
+           name="name">
 
-</div>
-<button class="btn btn-default">Submit</button> 
-  </form>
-  <button class="btn btn-default" (click)="update()">Update </button>
-  <br>
-   <table class="table table-striped">
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Action</th>
-      </tr>
-      <tr *ngFor="let posts of post; let i = index">
-        <td>{{ posts.id }}</td>
-        <td>{{ posts.name }}</td>
-        <td>{{ posts.email }}</td>
-        <td>
-          
-          <button class="btn btn-primary" (click)="deleteRow(i)">Remove</button>   <button class="btn btn-primary" (click)="updateRow(i)">Update</button>
-        </td>
-      </tr>
-    </table>
-    
+  </div>
+  <div class="form-group">
+
+    <label for="email">Email:</label>
+    <input type="text"
+           class="form-control"
+           formControlName="email"
+           placeholder="Enter Email"
+           name="email">
+
+  </div>
+  <button class="btn btn-default">Submit</button>
+</form>
+<button class="btn btn-default" (click)="update()">Update</button>
+<br>
+<table class="table table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let posts of post; let i = index">
+    <td>{{ posts.id }}</td>
+    <td>{{ posts.name }}</td>
+    <td>{{ posts.email }}</td>
+    <td>
+
+
+      <button class="btn btn-primary" (click)="deleteRow(i)">Remove</button>
+      <button class="btn btn-primary" (click)="updateRow(i)">Update</button>
+    </td>
+  </tr>
+</table>
+
 </body>

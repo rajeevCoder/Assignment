@@ -9,7 +9,7 @@ import { SubBasicComponentComponent } from '../sub-basic-component/sub-basic-com
   styleUrls: ['./basic.component.css']
 })
 export class BasicComponent {
-    post: any = [];
+    // post: any = [];
   // id: any = [];
     // name: any = [];
     // email: any = [];
